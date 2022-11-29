@@ -1,4 +1,7 @@
 
+## Example script to scale all videos in a given directory.
+
+
 import os
 
 
