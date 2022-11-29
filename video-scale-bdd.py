@@ -15,6 +15,10 @@ if not os.path.exists(output_path):
 for split in splits:
 
     print('Split: ', split)
+
+    if not os.path.exists(DATA_ROOT + split):
+        continue
+
     if not os.path.exists(output_path + split):
         os.mkdir(output_path + split)
 
