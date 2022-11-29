@@ -13,16 +13,18 @@ splits = ['train', 'val', 'test']
 
 for split in splits:
 
-    file_name = split + '.csv'
-    with open(file_name, 'w') as f:
+    if os.path.exists(ROOT + split):
 
-        writer = csv.writer(f)
+        file_name = split + '.csv'
+        with open(file_name, 'w') as f:
 
-        for subdir, dirs, files in os.walk(ROOT + split):
-            for file in files:
-                print(os.path.join(subdir, file))
+            writer = csv.writer(f)
 
-                writer.writerow([os.path.join(subdir, file)])
+            for subdir, dirs, files in os.walk(ROOT + split):
+                for file in files:
+                    #print(os.path.join(subdir, file))
+
+                    writer.writerow([os.path.join(subdir, file)])
 
 print('completed')
 
